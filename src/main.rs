@@ -3,7 +3,7 @@ use std::process;
 pub mod lib;
 use lib::Config;
 fn main() {
-    // --snip--
+    
     let args: Vec<String> = env::args().collect();
 
     let config = Config::new(&args).unwrap_or_else(|err| {
@@ -15,7 +15,7 @@ fn main() {
     println!("In file {}", config.filename);
 
     if let Err(e) = lib::run(config) {
-        // --snip--
+        
         println!("Application error: {}", e);
 
         process::exit(1);
